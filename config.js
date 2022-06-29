@@ -1,4 +1,4 @@
-global.you = ['6283170404188', '6283175886677', '6282181661561'] // Developer Bot
+global.you = ['5219996125657', '6283170404188', '6283175886677', '6282181661561'] // Developer Bot
 global.rowner = [] // Real Owner Bot
 global.owner = [] // Owner Bot
 global.police = [] // Police Bot
