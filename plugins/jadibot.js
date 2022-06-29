@@ -24,9 +24,9 @@ else global.conns = []
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 	let conns = global.conn
 	
-if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
+//if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
 	
-if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
+//if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
 
     let auth = false
     let authFile = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
@@ -125,6 +125,5 @@ const config = {
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
 handler.command = /^jadibot$/i
-handler.premium = true
 handler.private = true 
 module.exports = handler
