@@ -1,17 +1,11 @@
-const {
-  DisconnectReason, 
-  MessageRetryMap, 
-  useSingleFileAuthState, 
-  fetchLatestBaileysVersion, 
-  toBuffer
-} = require('@adiwajshing/baileys')
+const { DisconnectReason, MessageRetryMap, useSingleFileAuthState, fetchLatestBaileysVersion, toBuffer } = require('@adiwajshing/baileys')
 const WebSocket = require('ws')
 let qrcode = require('qrcode')
 let simple = require('../lib/simple') 
 let fs = require('fs') 
 
 const imports = (path) => {
-  path = require.resolve(path)
+ path = require.resolve(path)
   let modules, retry = 0
   do {
     if (path in require.cache) delete require.cache[path]
@@ -24,26 +18,28 @@ const imports = (path) => {
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 
 global.tryConnect = []
-if (global.conns instanceof Array) console.log()// for (let i of global.conns) global.conns[i] && global.conns[i].user ? global.conns[i].close().then(() => delete global.conns[id] && global.conns.splice(i, 1)).catch(global.conn.logger.error) : delete global.conns[i] && global.conns.splice(i, 1)
+if (global.conns instanceof Array) console.log()
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 	let conns = global.conn
-	if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
-  //if (!global.db.data.settings[conn.user.jid].jadibot) return conn.sendButton(m.chat, 'Jadibot tidak aktif', '', isOwner ? `Aktifkan` : `Owner`, isOwner ? `${usedPrefix}1 jadibot` : `${usedPrefix}owner`, m)
-    if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
-  //let parent = args[0] && args[0] == 'plz' ? conn : global.conn
+	
+if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
+	
+if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
+
     let auth = false
     let authFile = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
     let isInit = !fs.existsSync(authFile)
     let id = global.conns.length
     let { state, saveState} = useSingleFileAuthState(authFile)
     let { version } = await fetchLatestBaileysVersion()
-    const config = { 
-    	version: version, 
-        printQRInTerminal: false,
-        auth: state, 
-        receivedPendingNotifications: false
+    
+const config = { 
+    version: version, 
+    printQRInTerminal: false,
+    auth: state, 
+    receivedPendingNotifications: false
     }
     conn = simple.makeWASocket(config)
     let ev = conn.ev
@@ -97,7 +93,6 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         conn.spromote = '@user sekarang admin!'
         conn.sdemote = '@user sekarang bukan admin!'
         conn.handler = handlers.handler.bind(conn)
-        conn.onDelete = handlers.delete.bind(conn)
         conn.connectionUpdate = needUpdate.bind(conn)
         conn.credsUpdate = saveState.bind(conn)
         conn.onCall = handlers.onCall.bind(conn)
@@ -113,13 +108,11 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         if (!isInit || !close) {
             ev.off('messages.upsert', conn.handler)
             ev.off('group-participants.update', conn.onGroupUpdate)
-            ev.off('message.delete', conn.onDelete)
             ev.off('connection.update', conn.connectionUpdate)
             ev.off('creds.update', conn.credsUpdate)
             ev.off('call', conn.onCall)
         }
         ev.on('messages.upsert', conn.handler)
-        ev.on('message.delete', conn.onDelete)
         ev.on('connection.update', conn.connectionUpdate)
         ev.on('creds.update', conn.credsUpdate)
         ev.on('call', conn.onCall)
@@ -131,11 +124,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 }
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
-
 handler.command = /^jadibot$/i
-
 handler.premium = true
-handler.limit = true
 handler.private = true 
-
 module.exports = handler
