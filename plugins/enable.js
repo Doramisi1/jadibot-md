@@ -39,15 +39,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.delete = isEnable
       break
-    case 'antidelete':
-      if (m.isGroup) {
-        if (!isAdmin || !isOwner) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.delete = !isEnable
-      break
     case 'autodelvn':
       if (m.isGroup) {
         if (!isAdmin || !isOwner) {
