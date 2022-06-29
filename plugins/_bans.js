@@ -13,11 +13,6 @@ handler.before = function (m, { usedPrefix, text } ) {
       conn.reply(m.chat, `Kamu di Ban karena exp kamu minus`, m)
       user.exp = 0
   }
-  if (user.limit < 0) {
-  	user.banned = true
-      conn.reply(m.chat, `Kamu di Ban karena limit kamu minus`, m) 
-      user.limit = 0
-   }
 }
 
 module.exports = handler
