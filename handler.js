@@ -559,22 +559,6 @@ module.exports = {
       if (opts['autoread']) await this.chatRead(m.chat).catch(() => { })
     }
   },
-  async delete(M) {
-    let m = {}
-    m.key = M
-    console.log(m) 
-    if (m.key.fromMe) return
-    let chat = global.db.data.chats[m.key.remoteJid]
-    if (!chat.delete) return
-    await this.reply(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
-`.trim(), m.message, {
-      contextInfo: {
-        mentionedJid: [m.participant]
-      }
-    })
-    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
-  },
   async onCall(info) {
     console.log(info)
     let [data] = info
