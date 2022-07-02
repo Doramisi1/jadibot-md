@@ -78,11 +78,13 @@ const connectionOptions = async() => {
   config = (global.socket['retryMap']) ? { 
     printQRInTerminal: (global.socket['qr']),
     auth: state, 
+    logger: P({ level: 'silent'}),
     receivedPendingNotifications: (global.socket['pendingMessage']), 
     msgRetryCounterMap
   } : { 
     printQRInTerminal: (global.socket['qr']),
     auth: state, 
+    logger: P({ level: 'silent'}),
     receivedPendingNotifications: (global.socket['pendingMessage'])
   }
   return config
