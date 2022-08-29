@@ -63,7 +63,7 @@ module.exports = {
           if (!isNumber(user.exp)) user.exp = 0
           if (! isNumber(user.spin)) user.spin = 10
           if (! isNumber(user.money)) user.money = 1000
-          if (!isNumber(user.limit)) user.limit = 10
+          if (!isNumber(user.limit)) user.limit = 1000
           if (!user.acc) user.acc = false
           if (!user.acc) user.end = false
           if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -97,7 +97,7 @@ module.exports = {
           if (!isNumber(user.expiredgroup)) user.expiredgroup = -1
           if (!user.id) user.id = ''
           if (!user.group) user.group = false
-          if (!isNumber(user.joinlimit)) user.joinlimit = 1
+          if (!isNumber(user.joinlimit)) user.joinlimit = 100
           if (!('premium' in user) ) user.premium = false
           if (!('autolevelup' in user)) user.autolevelup = true
           if (!('owner' in user)) user.owner = false
@@ -106,7 +106,7 @@ module.exports = {
           if(!('staff' in user)) user.staff = false
         } else global.db.data.users[m.sender] = {
           exp: 0,
-          limit: 10,
+          limit: 1000,
           money: 1000,
           spin: 10,
           hoki: 1,
@@ -126,7 +126,7 @@ module.exports = {
           afk: -1,
           id: '', 
           group: false,
-          joinlimit: 1,
+          joinlimit: 100,
           afkReason: '',
           warn: 0,
           banned: false,
@@ -323,7 +323,6 @@ module.exports = {
       let premsG = Object.entries(global.db.data.users).filter(user => user[1].premium).map(([jid], i) => `${jid.split`@`[0]}`)
       let premsL = await matchArray(premsG, global.prems)
       if(typeof premsL === 'object') await pushArray(premsL, 'prems')
-      
       let isROwner = [global.conn.user.jid, ...global.rowner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
       let isOwner = isROwner || userss.owner || [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
       let isMods = isOwner || isROwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
@@ -402,7 +401,7 @@ module.exports = {
             if (name != 'unbanchat.js' && chat && chat.isBanned) return // Except this
             if (name != 'unbanuser.js' && user && (user.banned && (user.owner === false))) return // || user.police === false
           }
-          //if(!user.owner || !user.rowner) return conn.reply(m.chat, `Maaf @${m.sender.split`@`[0]} \n*『 Info 』*\nKami Staff 3S~Bot ingin melakukan backup data, dan sedikit meningkatkan performa bot.\nJadi, Kami dari Staff 3S~Bot memutuskan untuk melakukan *maintenance*, jika ada yang mau ditanyakan, harap hubungi Real Owner, Terima Kasih\n\n_*Hormat Kami, Staff 3S~Bot*_`, m, { mentions: [m.sender] })
+          //if(!user.owner || !user.rowner) return conn.reply(m.chat, `Maaf @${m.sender.split`@`[0]} \n*『 Info 』*\nKami Staff ghost👻-bot ingin melakukan backup data, dan sedikit meningkatkan performa bot.\nJadi, Kami dari Staff ghost👻-bot memutuskan untuk melakukan *maintenance*, jika ada yang mau ditanyakan, harap hubungi Real Owner, Terima Kasih\n\n_*Hormat Kami, Staff ghost👻-bot*_`, m, { mentions: [m.sender] })
           if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Both Owner
             fail('owner', m, this)
             continue
@@ -461,7 +460,7 @@ module.exports = {
           }
           
           if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-            this.sendButton(m.chat, `Limit anda habis, silahkan chat Owner atau beli melalui *${usedPrefix}buy*`, '© 3S~Bot', { 'button[0]': 'Owner', 'row[0]': '.owner', 'button[1]': 'Buy', 'row[1]': '.buy', 'button[2]': 'Buy All', 'row[2]': '.buyall' }, m)
+            this.sendButton(m.chat, `Limit anda habis, silahkan chat Owner atau beli melalui *${usedPrefix}buy*`, '©ghost👻-bot', { 'button[0]': 'Owner', 'row[0]': '.owner', 'button[1]': 'Buy', 'row[1]': '.buy', 'button[2]': 'Buy All', 'row[2]': '.buyall' }, m)
             continue // Limit habis
           }
           if (plugin.level > _user.level) {
