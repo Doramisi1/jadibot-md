@@ -126,4 +126,5 @@ handler.help = ['jadibot']
 handler.tags = ['jadibot']
 handler.command = /^jadibot$/i
 handler.private = true 
+handler.group = true 
 module.exports = handler
