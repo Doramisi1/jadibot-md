@@ -34,8 +34,8 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "4.2.0",
-        "@adiwajshing/keyed-db": "github:adiwajshing/keyed-db",
+        "@adiwajshing/baileys": "4.4.0",
+        "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^0.0.81",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.24.0",
