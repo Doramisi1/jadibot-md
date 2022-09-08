@@ -34,7 +34,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:adiwajshing/Bailey",
+        "@adiwajshing/baileys": "git+github:adiwajshing/Bailey.git",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^0.0.81",
         "awesome-phonenumber": "^2.64.0",
