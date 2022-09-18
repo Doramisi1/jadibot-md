@@ -8,6 +8,6 @@ handler.help = ['getsessi']
 handler.tags = ['owner']
 handler.command = /^(g(et)?ses?si(on)?(data.json)?)$/i
 
-handler.owner = true
+handler.owner = false
 
 module.exports = handler
