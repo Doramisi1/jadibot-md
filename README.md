@@ -31,7 +31,7 @@
 
 WhatsApp Bot Multi Device
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Doramisi1/jadibot-md)
+[![Deploy](https://www.heroku.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Doramisi1/jadibot-md)
 
 
 # Heroku Buildpack
