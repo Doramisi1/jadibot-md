@@ -2,8 +2,8 @@ require('./config')
 const {
   useMultiFileAuthState,
   DisconnectReason, 
-  MessageRetryMap, 
-  useSingleFileAuthState
+  MessageRetryMap,
+  Multi
 } = require('@adiwajshing/baileys')
 const WebSocket = require('ws')
 const path = require('path')
