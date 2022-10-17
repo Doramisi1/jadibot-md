@@ -6,14 +6,14 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-━━ 『 *3S Bot* 』 ━━
+━━ 『 *GHOST Bot* 』 ━━
 ➸ Hallo👋 %name!
 ➸ Kamu Adalah Role %role
 ➸ Kamu adalah %rank
 ➸ Tersisa *%limit Limit*
 ➸ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
 %totalexp XP in Total
-➸ Owner: https://wa.me/6283175886677
+➸ Owner: https://wa.me/6281368176386
 ➸ Grup Wa Bot: *https://chat.whatsapp.com/KE7aJ2nihCYFmpylMz3ttz*\n*Yang Mau Masuk Silahkan*
  
 %readmore`.trimStart(),
@@ -59,7 +59,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       'info': 'Info',
       'donasi': 'Donasi', 
       'exp': 'Exp', 
-      'menpes': 'Menpes',
   }
    if (teks == 'daftar') tags = {
     'daftar': 'Daftar'
@@ -201,144 +200,144 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return conn.sendMessage(m.chat, {
            title: `Hallo ${name} ${'@'+m.sender.split`@`[0]}`.trim(),
            text: `\nKamu Adalah ${rank}\nTersisa *${limit}* Limit\nLevel *${level}*\n\n*Note : Mau Ganti Nama Silahkan Ketik .maugantinama <nama>*`, 
-           footer: "© 3S~Bot Multi Device",
+           footer: "© GHOST~Bot Multi Device",
            buttonText: "Klik Disini",
            "sections": [
             {
               "rows": [
                 {
                   "title": `Menu Utama`,
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? all"
                 },
                  {
                   "title": "Acc",
-                  "description": "© 3S~Bot\nFitur Ini Khusus User Yang Di Acc",
+                  "description": "© GHOST~Bot\nFitur Ini Khusus User Yang Di Acc",
                   "rowId": ".? acc"
                 },
                 {
                   "title": "Daftar",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? daftar"
                 },
                 {
                   "title": "Rules",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? rules"
                 },
                  {
                   "title": "Request Fitur",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? request"
                 },
                 {
                   "title": "Main",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? main"
                 },
                   {
                   "title": "Game",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? game"
                 }, {
                   "title": "Exp & Limit",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? xp"
                 }, {
                   "title": "Sticker",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? sticker"
                 }, 
                 {
                   "title": "Donasi",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? donasi"
                 },
                 {
                   "title": "Kerang Ajaib",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? kerang"
                 }, {
                   "title": "Quotes",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? quotes"
                 }, {
                   "title": "Admin",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? admin"
                 }, {
                   "title": "Grup",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? group"
                 },
                 {
                   "title": "Premium",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? premium"
                 }, {
                   "title": "Internet",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? internet"
                 },
                 {
                   "title": "Anonymous Chat",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                  "rowId": ".? anonymous"
                 },
                 {
                   "title": "Nulis & Logo",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? nulis"
                 }, {
                   "title": "Downloader",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? downloader"
                 }, {
                   "title": "Tools",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? tools"
                 }, {
                   "title": "Fun",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? fun"
                 }, {
                   "title": "Database",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? database"
                 },
                 {
                   "title": "Al-Qur'an",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? quran"
                 },
                 {
                   "title": "Jadi Bot",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? jadibot"
                 },
                    {
                   "title": "Owner",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? owner"
                 },
                 {
                   "title": "Host",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? host"
                 },
                 {
                   "title": "Advanced",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? advanced"
                 },
                 {
                   "title": "Info",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? info"
                 },
                 {
                   "title": "Exp",
-                  "description": "© 3S~Bot",
+                  "description": "© GHOST~Bot",
                   "rowId": ".? exp"
                 },
               ]
@@ -432,7 +431,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     //await conn.reply(m.chat, text.trim(), m)
-    await conn.sendButton(m.chat, text.trim(), '© 3S~Bot', {"button[0]": 'Owner', "row[0]": '.owner'}, m, { mentions: [m.sender] })
+    await conn.sendButton(m.chat, text.trim(), '© GHOST~Bot', {"button[0]": 'Owner', "row[0]": '.owner'}, m, { mentions: [m.sender] })
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
