@@ -59,6 +59,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       'info': 'Info',
       'donasi': 'Donasi', 
       'exp': 'Exp', 
+      'menpes': 'Menpes',
   }
    if (teks == 'daftar') tags = {
     'daftar': 'Daftar'
