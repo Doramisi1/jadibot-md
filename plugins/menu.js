@@ -53,6 +53,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       'database': 'Database',
       'quran': 'Al-Quran', 
       'jadibot': 'Jadi Bot',
+      'anonymous': 'Anonymous',
       'owner': 'Owner',
       'host': 'Host',
       'advanced': 'Advanced',
